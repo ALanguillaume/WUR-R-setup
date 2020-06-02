@@ -1,11 +1,24 @@
-R 4.0 installation guide
+R WUR setup
 ================
-Antoine Languillaume
-6/2/2020
+
+This documents outlines a simple way to reliably setup R on a WUR
+windows machine. I took the time to write it because of the release of R
+4.0. That way WUR folks can have a set of guidelines to efficiently
+update their machine.
 
 # Why update to R 4.0 ?
 
-## R set-up good practices on windows WUR Sytems
+R 4.0 is a major release, that marks the 20th birthday of R. Aside from
+that useless trivia, it also implies that a lot of stuff have changed
+internally and you may soon encounter warnings when installing/loading
+packages that might soon or later turn into errors and seriously hamper
+your R experience…
+
+<img src="README_files/figure-gfm/unnamed-chunk-1-1.png" width="300" style="display: block; margin: auto;" />
+
+So better getting that over with.
+
+# R set-up good practices on windows WUR Sytems
 
 On WUR windows system, I believe it is good practice to avoid installing
 software in `C:/Program Files/`. For the simple reason that has a lambda
@@ -38,6 +51,8 @@ administrative rights simply by right-clicking on the .exe installer and
 selecting **WUR - Run with administrative rights**. If you have a WUR
 laptop it should be the default option, if not you will have to call IT,
 so that they will grant you that privilege.
+
+# Updating your WUR R setup
 
 ## Update R
 
