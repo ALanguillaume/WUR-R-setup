@@ -2,9 +2,7 @@
 title: "R 4.0 installation guide"
 author: "Antoine Languillaume"
 date: "6/2/2020"
-output: 
-  github_document:
-    # number_sections: true
+output: github_document
 ---
 
 # Why update to R 4.0 ?
