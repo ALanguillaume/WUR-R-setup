@@ -12,7 +12,7 @@ This documents outlines a simple way to reliably setup R on a WUR windows machin
 
 # Why update to R 4.0 ?
 
-R 4.0 is a major release, that marks the 20th birthday of R. Aside from that useless trivia, it also implies that a lot of stuff have changed internally and you may soon encounter warnings when installing/loading packages that might soon or later turn into errors and seriously hamper your R experience... 
+R 4.0 is a major release, that marks the 20th birthday of R. Aside from that useless trivia, it also implies that a lot of stuff have changed internally and you may soon encounter warnings when installing/loading packages that might sooner or later turn into errors and seriously hamper your R experience... 
 
 ```{r, echo = FALSE, fig.align = 'center'}
 magick::image_read("ignoring_dep_warnings.jpg") %>%
@@ -50,6 +50,8 @@ Execute the installer with the __WUR - Run with administrative rights__ option a
 
 ## Update Rstudio
 
+For Rstudio to work smoothly with R 4.0, you need to install Rstudio version 1.3.
+
 
 ### Uninstall your previous version of Rstudio:
 
@@ -67,7 +69,7 @@ Execute the installer with the __WUR - Run with administrative rights__ option a
 
 ## Update Rtools
 
-Rtools are the set of command line tools that are used to build R and R packages from source, something you have to do from time to time to get the latest version of a package. It is easy to install, you never have to use it directly and it completes your setup. You'd better do that now as you are taking some time to upgrade your setup rather than later when you will be trying to quickly run an analysis to meet some important deadlines...
+Rtools is the set of command line tools that is used to build R and R packages from source, something you have to do from time to time to get the latest version of a package. It is easy to install, you never have to use it directly and it completes your setup. So no worries. You'd better do that now as you are taking some time to upgrade your setup rather than later when you will be trying to quickly run an analysis to meet some important deadlines...
 
 ### Uninstall your previous version of Rtools:
 
@@ -87,16 +89,16 @@ Execute the installer with the __WUR - Run with administrative rights__ option a
 
 ### Putting Rtools on the PATH
 
-After installation is complete, you need to perform one more step: you need to put the location Rtools on the your computer PATH which is basically a system wide address book that allows program to know where to find each other.
+After installation is complete, you need to perform one more step: you need to put the location Rtools on the your computer PATH which is basically a system wide address book that allows programs to know where to find each other.
 To do so we are going to edit a R start up file called `Renviron.site`. Don't worry it is REALLY simple.
 
-At the R console type the following command:
+At the R console in Rstudio type the following command:
 
 ```{r, eval = FALSE}
 file.edit(R.home("etc/Renviron.site"))
 ```
 
-Add the following lines, save and close the `Renviron.site` file.
+The `Renviron.site` will pop up as an editable script. Add the following lines, save and close the `Renviron.site` file.
 
 ```{r, eval = FALSE}
 # Set Rtools path
@@ -122,8 +124,8 @@ If this succeeds, you’re good to go!
 
 ### General advice
 
-Your R packages are gather in a special folder called a __library__. By default on  WUR windows system, that library is created in `M:/Documents/R/win-library/` which means it goes dangling somewhere on the WUR server. This clearly suboptimal as you have your packages stored on a different network then R itself. It is a bit like having your workshop in your basement and all your tools in the attic, not really efficient. Moreover, if you don't fix that you will get an error each time you execute a command (something like :`\\\WURNET\\...`).
-So for thing to as smoothly as possible, I usually have my libraries in `C:/MyPrograms/R-libraries/`.
+Your R packages are gather in a special folder called a __library__. By default on  WUR windows system, that library is created in `M:/Documents/R/win-library/` which means it goes dangling somewhere on the WUR server. This is clearly sub-optimal as you have your packages stored on a different network then R itself. It is a bit like having your workshop in your basement and all your tools your the attic, not really efficient. Moreover, if you don't fix that you will get an error each time you execute a command (something like :`\\\WURNET\\...`).
+So for thing to run as smoothly as possible, I usually have my libraries in `C:/MyPrograms/R-libraries/`.
 
 #### Setting up R libraries in the proper locaton:
 
@@ -159,19 +161,19 @@ R 4.0 is a major release so it comes with brand you internals. In non-jargon it 
 
 Something along those lines should appear: `"C:/Users/Someone/Documents/win-library/4.0"`.
 
-*	Close to that library should be your former R library with all the packages previously installed, something like: `"C:/Users/Juani/Documents/win-library/3.6"`
+*	Close to that library should be your former R library with all the packages previously installed, something like: `"C:/Users/Someone/Documents/win-library/3.6"`
 
 *	Still in the console now type: 
 
 __MAKE SURE YOU REPLACE THE PATH WITH YOURS !__
 
 ```{r, eval = FALSE}
-install.packages(list.files ("C:/Users/Juani/Documents/win-library/3.6")) 
+install.packages(list.files ("C:/Users/Someone/Documents/win-library/3.6")) 
 ```
 
 This little hack should save you time. Just wait for everything to be installed.
 
 
-And eh voilà ! You should be ready with a sound and safe R 4.0 setup !
+And _eh voilà_ ! You should be ready with a sound and safe R 4.0 setup !
 
 
