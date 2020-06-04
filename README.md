@@ -58,7 +58,7 @@ so that they will grant you that privilege.
 
 ### Download R for windows
 
-[Download R 4.0](https://cran.r-project.org/bin/windows/base/%7D)
+[Download R 4.0](https://cran.r-project.org/bin/windows/base/)
 
 ### Install R
 
