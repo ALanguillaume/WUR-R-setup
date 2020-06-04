@@ -235,3 +235,8 @@ installed.
 
 And *eh voilà* \! You should be ready with a sound and safe R 4.0 setup
 \!
+
+## Acknowledgements
+
+A lot of the ideas in this document came from the sweat and tears of
+Maikel Verouden while battling with the WUR default R setup.
