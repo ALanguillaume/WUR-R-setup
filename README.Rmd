@@ -40,7 +40,7 @@ __IMPORTANT__: To be able to install software yourself you need to have __power-
 
 ### Download R for windows
 
-[Download R 4.0](https://cran.r-project.org/bin/windows/base/})
+[Download R 4.0](https://cran.r-project.org/bin/windows/base/)
 
 ### Install R
 
