@@ -55,7 +55,7 @@ For Rstudio to work smoothly with R 4.0, you need to install Rstudio version 1.3
 
 ### Uninstall your previous version of Rstudio:
 
-Just to be sure. Type `WUR - install applications` in the start-up menu and click on the corresponding item. Then navigate to Rstudio in the applications list, right click on it and uninstall it.
+Just to be sure. Type `WUR - uninstall applications` in the start-up menu and click on the corresponding item. Then navigate to Rstudio in the applications list, right click on it and uninstall it.
 
 ### Download Rstudio for windows
 
@@ -85,7 +85,7 @@ If you have no clue about that go to `Control Panel\System and Security\System` 
 
 ### Install Rtools
 
-Execute the installer with the __WUR - Run with administrative rights__ option and make sure to install R in `C:/MyPrograms/Rtools/`.
+Execute the installer with the __WUR - Run with administrative rights__ option and make sure to install Rtools in `C:/MyPrograms/Rtools/`.
 
 ### Putting Rtools on the PATH
 
@@ -124,7 +124,7 @@ If this succeeds, you’re good to go!
 
 ### General advice
 
-Your R packages are gather in a special folder called a __library__. By default on  WUR windows system, that library is created in `M:/Documents/R/win-library/` which means it goes dangling somewhere on the WUR server. This is clearly sub-optimal as you have your packages stored on a different network then R itself. It is a bit like having your workshop in your basement and all your tools your the attic, not really efficient. Moreover, if you don't fix that you will get an error each time you execute a command (something like :`\\\WURNET\\...`).
+Your R packages are gathered in a special folder called a __library__. By default on  WUR windows system, that library is created in `M:/Documents/R/win-library/` which means it goes dangling somewhere on the WUR server. This is clearly sub-optimal as you have your packages stored on a different network then R itself. It is a bit like having your workshop in your basement and all your tools your the attic, not really efficient. Moreover, if you don't fix that you will get an error each time you execute a command (something like :`\\\WURNET\\...`).
 So for thing to run as smoothly as possible, I usually have my libraries in `C:/MyPrograms/R-libraries/`.
 
 #### Setting up R libraries in the proper locaton:
@@ -179,3 +179,4 @@ And _eh voilà_ ! You should be ready with a sound and safe R 4.0 setup !
 ## Acknowledgements
 
 A lot of the ideas in this document came from the sweat and tears of Maikel Verouden while battling with the WUR default R setup.
+
