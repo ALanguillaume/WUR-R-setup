@@ -8,7 +8,7 @@ library(magrittr)
 ```
 
 
-This documents outlines a simple way to reliably setup R on a WUR windows machine. I took the time to write it because of the release of R 4.0. That way WUR folks can have a set of guidelines to efficiently update their machine.
+This documents outlines a simple way to reliably setup R on a WUR windows machine. I took the time to write it because of the release of R 4.0.x. That way WUR folks can have a set of guidelines to efficiently update their machine.
 
 # Why update to R 4.0 ?
 
@@ -40,7 +40,7 @@ __IMPORTANT__: To be able to install software yourself you need to have __power-
 
 ### Download R for windows
 
-[Download R 4.0](https://cran.r-project.org/bin/windows/base/)
+[Download R 4.0.3](https://cran.r-project.org/bin/windows/base/)
 
 ### Install R
 
@@ -50,7 +50,7 @@ Execute the installer with the __WUR - Run with administrative rights__ option a
 
 ## Update Rstudio
 
-For Rstudio to work smoothly with R 4.0, you need to install Rstudio version 1.3.
+For Rstudio to work smoothly with R 4.0.3, you need to install Rstudio version 1.4.
 
 
 ### Uninstall your previous version of Rstudio:
@@ -59,7 +59,7 @@ Just to be sure. Type `WUR - uninstall applications` in the start-up menu and cl
 
 ### Download Rstudio for windows
 
-[Download Rstudio 1.3](https://rstudio.com/products/rstudio/download/#download)
+[Download Rstudio 1.4](https://rstudio.com/products/rstudio/download/#download)
 
 ### Install Rstudio
 
@@ -78,7 +78,7 @@ If you already have Rtools installed, It should be version 3.5 or so. Type `WUR 
 
 ### Download Rtools
 
-[Downlad Rtools 4.0](https://cran.r-project.org/bin/windows/Rtools/)
+[Downlad Rtools 4.0.3](https://cran.r-project.org/bin/windows/Rtools/)
 
 Download the version suited for your system (32 or 64-bit). By now, you should now have a 64-bit computer.
 If you have no clue about that go to `Control Panel\System and Security\System` or simply type `sessionInfo()` in the R console.
@@ -143,7 +143,7 @@ Add the following lines, save and close the `Renviron.site` file.
 
 ```{r, eval = FALSE}
 ## Set location of user-installed packages
-R_LIBS_USER=${R_LIBS_USER-'C:/MyPrograms/R-libraries/4.0'}
+R_LIBS_USER=${R_LIBS_USER-'C:/MyPrograms/R-libraries/4.0.3'}
 ```
 
 
@@ -159,7 +159,7 @@ R 4.0 is a major release so it comes with brand you internals. In non-jargon it 
 .libPaths()
 ```
 
-Something along those lines should appear: `"C:/Users/Someone/Documents/win-library/4.0"`.
+Something along those lines should appear: `"C:/Users/Someone/Documents/win-library/4.0.3"`.
 
 *	Close to that library should be your former R library with all the packages previously installed, something like: `"C:/Users/Someone/Documents/win-library/3.6"`
 
@@ -174,7 +174,7 @@ install.packages(list.files ("C:/Users/Someone/Documents/win-library/3.6"))
 This little hack should save you time. Just wait for everything to be installed.
 
 
-And _eh voilà_ ! You should be ready with a sound and safe R 4.0 setup !
+And _eh voilà_ ! You should be ready with a sound and safe R 4.0.3 setup !
 
 ## Acknowledgements
 
