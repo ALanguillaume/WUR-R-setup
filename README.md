@@ -3,7 +3,7 @@ R WUR setup
 
 This documents outlines a simple way to reliably setup R on a WUR
 windows machine. I took the time to write it because of the release of R
-4.0. That way WUR folks can have a set of guidelines to efficiently
+4.0.x. That way WUR folks can have a set of guidelines to efficiently
 update their machine.
 
 # Why update to R 4.0 ?
@@ -34,7 +34,9 @@ fs::dir_tree("C:/MyPrograms/", recurse = FALSE)
 ```
 
     ## C:/MyPrograms/
+    ## +-- Miniconda3
     ## +-- Pandoc
+    ## +-- PyCharm Community Edition 2020.2.3
     ## +-- Python37
     ## +-- R
     ## +-- R-libraries
@@ -58,7 +60,7 @@ so that they will grant you that privilege.
 
 ### Download R for windows
 
-[Download R 4.0](https://cran.r-project.org/bin/windows/base/)
+[Download R 4.0.3](https://cran.r-project.org/bin/windows/base/)
 
 ### Install R
 
@@ -67,19 +69,19 @@ option and make sure to install R in `C:/MyPrograms/R/`.
 
 ## Update Rstudio
 
-For Rstudio to work smoothly with R 4.0, you need to install Rstudio
-version 1.3.
+For Rstudio to work smoothly with R 4.0.3, you need to install Rstudio
+version 1.4.
 
 ### Uninstall your previous version of Rstudio:
 
-Just to be sure. Type `WUR - install applications` in the start-up menu
-and click on the corresponding item. Then navigate to Rstudio in the
-applications list, right click on it and uninstall it.
+Just to be sure. Type `WUR - uninstall applications` in the start-up
+menu and click on the corresponding item. Then navigate to Rstudio in
+the applications list, right click on it and uninstall it.
 
 ### Download Rstudio for windows
 
-[Download
-Rstudio 1.3](https://rstudio.com/products/rstudio/download/#download)
+[Download Rstudio
+1.4](https://rstudio.com/products/rstudio/download/#download)
 
 ### Install Rstudio
 
@@ -105,7 +107,7 @@ right click on it and uninstall it.
 
 ### Download Rtools
 
-[Downlad Rtools 4.0](https://cran.r-project.org/bin/windows/Rtools/)
+[Downlad Rtools 4.0.3](https://cran.r-project.org/bin/windows/Rtools/)
 
 Download the version suited for your system (32 or 64-bit). By now, you
 should now have a 64-bit computer. If you have no clue about that go to
@@ -115,7 +117,7 @@ should now have a 64-bit computer. If you have no clue about that go to
 ### Install Rtools
 
 Execute the installer with the **WUR - Run with administrative rights**
-option and make sure to install R in `C:/MyPrograms/Rtools/`.
+option and make sure to install Rtools in `C:/MyPrograms/Rtools/`.
 
 ### Putting Rtools on the PATH
 
@@ -155,14 +157,14 @@ If this works, you can try to install an R package from source:
 install.packages("jsonlite", type = "source")
 ```
 
-If this succeeds, you’re good to go\!
+If this succeeds, you’re good to go!
 
 ## Reinstall your packages
 
 ### General advice
 
-Your R packages are gather in a special folder called a **library**. By
-default on WUR windows system, that library is created in
+Your R packages are gathered in a special folder called a **library**.
+By default on WUR windows system, that library is created in
 `M:/Documents/R/win-library/` which means it goes dangling somewhere on
 the WUR server. This is clearly sub-optimal as you have your packages
 stored on a different network then R itself. It is a bit like having
@@ -190,7 +192,7 @@ Add the following lines, save and close the `Renviron.site` file.
 
 ``` r
 ## Set location of user-installed packages
-R_LIBS_USER=${R_LIBS_USER-'C:/MyPrograms/R-libraries/4.0'}
+R_LIBS_USER=${R_LIBS_USER-'C:/MyPrograms/R-libraries/4.0.3'}
 ```
 
 ### Updating your packages
@@ -200,31 +202,30 @@ non-jargon it means that R and R packages are built in a slightly
 different way, which unfortunately forces the users to re-install all
 their packages. To do that:
 
-  - Make sure your CRAN mirror (the server where you download your
-    packages) is set to the closet location: in RStudio, Tools \> Global
-    Options \> Packages \> primary CRAN repository. For us at WUR the
-    closest is `Belgium (Ghent) [https] - Ghent University Library`. If
-    you are working from a different place, please pick the mirror
-    closest to where you are.
+-   Make sure your CRAN mirror (the server where you download your
+    packages) is set to the closet location: in RStudio, Tools &gt;
+    Global Options &gt; Packages &gt; primary CRAN repository. For us at
+    WUR the closest is
+    `Belgium (Ghent) [https] - Ghent University Library`. If you are
+    working from a different place, please pick the mirror closest to
+    where you are.
 
-  - Find your current R library, in the R console type:
-
-<!-- end list -->
+-   Find your current R library, in the R console type:
 
 ``` r
 .libPaths()
 ```
 
 Something along those lines should appear:
-`"C:/Users/Someone/Documents/win-library/4.0"`.
+`"C:/Users/Someone/Documents/win-library/4.0.3"`.
 
-  - Close to that library should be your former R library with all the
+-   Close to that library should be your former R library with all the
     packages previously installed, something like:
     `"C:/Users/Someone/Documents/win-library/3.6"`
 
-  - Still in the console now type:
+-   Still in the console now type:
 
-**MAKE SURE YOU REPLACE THE PATH WITH YOURS \!**
+**MAKE SURE YOU REPLACE THE PATH WITH YOURS !**
 
 ``` r
 install.packages(list.files ("C:/Users/Someone/Documents/win-library/3.6")) 
@@ -233,8 +234,8 @@ install.packages(list.files ("C:/Users/Someone/Documents/win-library/3.6"))
 This little hack should save you time. Just wait for everything to be
 installed.
 
-And *eh voilà* \! You should be ready with a sound and safe R 4.0 setup
-\!
+And *eh voilà* ! You should be ready with a sound and safe R 4.0.3 setup
+!
 
 ## Acknowledgements
 
